@@ -42,7 +42,7 @@
  *
  * See #strongify for an example of usage.
  */
-#define weakify(...) \
+#define weakify1(...) \
     rac_keywordify \
     metamacro_foreach_cxt(rac_weakify_,, __weak, __VA_ARGS__)
 
@@ -50,7 +50,7 @@
  * Like #weakify, but uses \c __unsafe_unretained instead, for targets or
  * classes that do not support weak references.
  */
-#define unsafeify(...) \
+#define unsafeify1(...) \
     rac_keywordify \
     metamacro_foreach_cxt(rac_weakify_,, __unsafe_unretained, __VA_ARGS__)
 
@@ -80,7 +80,7 @@
 
  * @endcode
  */
-#define strongify(...) \
+#define strongify1(...) \
     rac_keywordify \
     _Pragma("clang diagnostic push") \
     _Pragma("clang diagnostic ignored \"-Wshadow\"") \
